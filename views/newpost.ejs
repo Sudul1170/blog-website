@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/post.css">
+    <link rel="icon" href="https://www.pngkey.com/png/detail/232-2326777_blogger-logo-icons-no-attribution-white-blog-icon.png">
+    <title>New Post</title>
+</head>
+<body>
+    <h1>Create a New Post</h1>
+    <form action="/newpost" method="POST" enctype="multipart/form-data">
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required>
+        <br>
+        <h4>Content:</h4>
+        <textarea id="content" name="content" required></textarea>
+        <br>
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*">
+        <br>
+        <button type="submit">Publish Post</button>
+        <a href="/">Back to Home</a>
+    </form>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="icon" href="https://www.pngkey.com/png/detail/232-2326777_blogger-logo-icons-no-attribution-white-blog-icon.png">
+    <title>Blog</title>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="#">Contact</a>
+        <a href="#">Blogs</a>
+        <a href="#">About</a>
+    </nav>
+    <h1>Welcome to the Blog!</h1>
+    <% if (typeof userLoggedIn === 'undefined' || !userLoggedIn) { %>
+        <div id="nps"><a href="/login" class="screen">Login/Signup</a></div>
+    <% } else { %>
+        <div id="nps"><a href="/newpost" class="screen">Create a New Post</a></div>
+    <% } %>
+    <div class="card-container">
+        <% posts.forEach(post => { %>
+            <div class="card">
+                <% if (post.image) { %>
+                    <img src="/uploads/<%= post.image %>" alt="blogImage" class="userImage">
+                <% } else { %>
+                    <img src="/img/alt.png" alt="Default Image" class="userImage">
+                <% } %>
+                <h2><%= post.title %></h2>
+                <p><%= post.content %></p>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
