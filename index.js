@@ -10,10 +10,10 @@ const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-mongoose.connect('mongodb://localhost:27017/blog')
+mongoose.connect('mongodb+srv://Sudul1107:Sudul12345@cluster0.hsv8ql6.mongodb.net/?retryWrites=true&w=majority')
   .then(() => console.log("Connected to MongoDB"))
   .catch((error) => console.error(error));
-
+  
 const postSchema = new mongoose.Schema({
   title: String,
   content: String,
@@ -137,3 +137,4 @@ app.post("/login", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on ${PORT}`);
 });
+
